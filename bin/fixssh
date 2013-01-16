@@ -1,4 +1,0 @@
-export SSH_CLIENT="172.16.13.138 53290 22"
-export SSH_TTY="/dev/pts/36"
-export SSH_AUTH_SOCK="/tmp/ssh-hJJbt27822/agent.27822"
-export SSH_CONNECTION="172.16.13.138 53290 172.16.2.151 22"
