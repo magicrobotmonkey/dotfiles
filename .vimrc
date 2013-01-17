@@ -9,13 +9,18 @@ set smartcase
 set incsearch
 set gdefault
 set ssop=buffers,winsize
-
+set iskeyword+=-,@ " none of these are word dividers
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
 syn on
 set hlsearch
 set hidden
+set cursorline
+set cursorcolumn
+set nohlsearch
+set scrolloff=3
+set sidescrolloff=3
 
 autocmd FileType yaml setlocal expandtab 
 
