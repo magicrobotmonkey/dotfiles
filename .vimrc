@@ -1,3 +1,4 @@
+set nocompatible
 call pathogen#infect()
 set nowrap
 set showmatch
@@ -137,7 +138,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 " powerline
 set encoding=utf-8
-set nocompatible
 set laststatus=2
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
