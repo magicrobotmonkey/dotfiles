@@ -115,7 +115,10 @@ alias ssh='ssh -A'
 alias fixssh='source ~/bin/fixssh'
 ~/bin/grabssh
 
-source /usr/local/bin/virtualenvwrapper.sh
+WRAPPER=/usr/local/bin/virtualenvwrapper.sh
+if [ -f $WRAPPER ]; then
+	source $WRAPPER
+fi
 
 export EDITOR=vim
 source ~/.bash_prompt
