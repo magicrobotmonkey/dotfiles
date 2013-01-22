@@ -1,8 +1,8 @@
 #!/bin/bash
 
-IGNORE_PATTERN=".git*"
+IGNORE_PATTERN=".git$\|.gitignore\|.gitmodules"
 
-for file in `ls --ignore=$IGNORE_PATTERN -A ~/dotfiles`
+for file in `ls -A ~/dotfiles|grep -v "$IGNORE_PATTERN"`
 do 
 	if [ ! -L ~/$file -a -e ~/$file ]
 	then
