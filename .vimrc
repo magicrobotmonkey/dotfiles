@@ -3,6 +3,7 @@ call pathogen#infect()
 set nowrap
 set showmatch
 set autoindent
+filetype indent on
 set wildmode=longest,list
 set textwidth=150
 set ignorecase
@@ -19,11 +20,11 @@ set hlsearch
 set hidden
 set cursorline
 set cursorcolumn
-set nohlsearch
 set scrolloff=3
 set sidescrolloff=3
 
 autocmd FileType yaml setlocal expandtab 
+"au BufWrite *.py 1,$s/\s*$//g
 
 syntax enable
 set background=dark
