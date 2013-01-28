@@ -123,4 +123,5 @@ if [ -f $WRAPPER ]; then
 fi
 
 export EDITOR=vim
+eval `dircolors ~/.dircolors`
 source ~/.bash_prompt
