@@ -105,10 +105,10 @@ statusbar = {
     topic_empty = " Irssi v$J - http://www.irssi.org";
 
     # all of these treated specially, they're only displayed when needed
-  	# Solarized
-	lag = "{sb Lag: %m$0-%n}";
-	act = "{sb Act: $0-}";
-	more = "%k%3-- more --%n";
+    # Solarized
+    lag = "{sb Lag: %m$0-%n}";
+    act = "{sb Act: $0-}";
+    more = "%k%3-- more --%n";
   };
 
   # there's two type of statusbars. root statusbars are either at the top
@@ -190,13 +190,19 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = ""; user_name = "abassett"; nick = "abassett"; };
+  core = {
+    real_name = "created by Teamocil";
+    user_name = "abassett";
+    nick = "abassett";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
-	# Solarized
-	theme = "solarized-universal";
-	hilight_color = "= %R";
+    # Solarized
+    theme = "solarized-universal";
+    hilight_color = "= %R";
   };
 };
-hilights = ( { text = "abassett"; color="%M"; nick = "yes"; word = "yes"; } );
+hilights = (
+  { text = "abassett"; color = "%M"; nick = "yes"; word = "yes"; }
+);
