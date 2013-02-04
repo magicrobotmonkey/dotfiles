@@ -43,7 +43,7 @@ bash_prompt()
 	local HOSTNAME="$HOSTNAME_COLOR\h$END_COLOR"
 	local USERNAME="[$USERNAME_COLOR\u@$END_COLOR$HOSTNAME$USERNAME_COLOR]$END_COLOR"
 	local LOCATION="$BLUE[\w]$END_COLOR"
-	local CURSOR="$RED>>$END_COLOR"
+	local CURSOR="$RED➤$END_COLOR"
 	local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
 	local VIRT_ENV=""
 	if [ -n "$VIRTUAL_ENV" ] ; then

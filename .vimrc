@@ -27,8 +27,10 @@ autocmd FileType yaml setlocal expandtab
 "au BufWrite *.py 1,$s/\s*$//g
 
 syntax enable
+set t_Co=16
 set background=dark
 let g:solarized_termtrans = 1
+let g:solarized_termcolors=16
 colorscheme solarized
 "hi Search cterm=NONE ctermfg=grey ctermbg=red
 
@@ -140,7 +142,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " powerline
 set encoding=utf-8
 set laststatus=2
-set t_Co=256
 let g:Powerline_symbols = 'fancy'
 " let g:Powerline_theme='short'
 let g:Powerline_colorscheme='solarized16'
