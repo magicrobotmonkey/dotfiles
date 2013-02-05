@@ -38,7 +38,9 @@ bash_prompt()
 		HOSTNAME_COLOR=$CYAN
 	else
 		HOSTNAME=`hostname -A`
-		if [[ $HOSTNAME == *vpnlocal* ]]; then
+		if [[ `hostname` == hotcops ]]; then
+			HOSTNAME_COLOR=$WHITE
+		elif [[ $HOSTNAME == *vpnlocal* ]]; then
 			case $BOXSET in
 				"prod") HOSTNAME_COLOR=$RED ;;
 				"stage") HOSTNAME_COLOR=$MAGENTA ;;
