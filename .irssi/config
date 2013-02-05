@@ -19,12 +19,12 @@ servers = (
 
 chatnets = {
   Five3Genomics = { type = "IRC"; autosendcmd = "localhost"; };
-  freeenode = { type = "IRC"; };
   freenode = { type = "IRC"; };
 };
 
 channels = (
-  { name = "#Five3"; chatnet = "Five3Genomics"; autojoin = "yes"; }
+  { name = "#yacht"; chatnet = "Five3Genomics"; autojoin = "yes"; }
+  { name = "#sassie-ex"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {

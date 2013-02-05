@@ -131,7 +131,7 @@ let g:syntastic_python_checker_args='--ignore=W191,E121,E122,E123,E127,E128,E223
 let g:syntastic_python_checker="flake8"
 "let g:syntastic_python_checker="pyflakes"
 let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 let g:syntastic_loc_list_height=8
 
 let g:syntastic_mode_map = { 'mode': 'active',

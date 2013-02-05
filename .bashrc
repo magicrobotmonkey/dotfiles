@@ -86,6 +86,9 @@ alias l='ls -CF'
 alias ssh='ssh -A'
 
 alias tmls='tmux list-sessions'
+alias tmat='tmux at -t'
+
+alias dotup='cd ~/dotfiles && git pull && source ~/.bashrc && cd -'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
