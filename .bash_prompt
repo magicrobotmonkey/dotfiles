@@ -32,11 +32,22 @@ bash_prompt()
 	local GIT_COLOR=$GREEN
 
 	local HOSTNAME_COLOR
-	case $BOXSET in
-		"prod") HOSTNAME_COLOR=$RED ;;
-		"stage") HOSTNAME_COLOR=$MAGENTA ;;
-		*) HOSTNAME_COLOR=$PURPLE ;;
-	esac
+	PLATFORM='unknown'
+	if [[ `uname` == Darwin ]]; then
+		OSX=1
+		HOSTNAME_COLOR=$CYAN
+	else
+		HOSTNAME=`hostname -A`
+		if [[ $HOSTNAME == *vpnlocal* ]]; then
+			case $BOXSET in
+				"prod") HOSTNAME_COLOR=$RED ;;
+				"stage") HOSTNAME_COLOR=$MAGENTA ;;
+				*) HOSTNAME_COLOR=$PURPLE ;;
+			esac
+		else
+			HOSTNAME_COLOR=$YELLOW
+		fi
+	fi
 
 
 	# prompt
