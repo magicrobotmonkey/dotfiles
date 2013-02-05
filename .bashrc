@@ -89,6 +89,7 @@ alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
 
 alias dotup='cd ~/dotfiles && git pull && source ~/.bashrc && cd -'
+alias soba='source ~/.bashrc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
