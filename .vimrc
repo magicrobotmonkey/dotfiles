@@ -22,6 +22,7 @@ set cursorline
 set cursorcolumn
 set scrolloff=3
 set sidescrolloff=3
+set relativenumber
 
 autocmd FileType yaml setlocal expandtab 
 "au BufWrite *.py 1,$s/\s*$//g
@@ -97,6 +98,16 @@ endfunction
 map <C-W> :call DeleteBuffer()<CR>
 imap <C-W> <C-O><C-W>
 
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
 
 set formatoptions-=t
 
@@ -107,6 +118,29 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" a better htmldjango detection
+augroup filetypedetect
+  " removes current htmldjango detection located at $VIMRUNTIME/filetype.vim
+  au! BufNewFile,BufRead *.html
+  au  BufNewFile,BufRead *.html   call FThtml()
+ 
+  func! FThtml()
+    let n = 1
+    while n < 10 && n < line("$")
+      if getline(n) =~ '\<DTD\s\+XHTML\s'
+        setf xhtml
+        return
+      endif
+      if getline(n) =~ '{%\|{{\|{#'
+        setf htmldjango
+        return
+      endif
+      let n = n + 1
+    endwhile
+    setf html
+  endfunc
+augroup END
 
 " close the scratch window from code complete
 " when leaving insert mode
