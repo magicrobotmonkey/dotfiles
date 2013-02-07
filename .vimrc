@@ -66,37 +66,7 @@ noremap <Del> 2<C-E>
 nnoremap <C-N> :next<CR>
 nnoremap <C-P> :prev<CR>
 
-" Delete the current buffer, issuing bnext in all windows
-" where displayed before that
-function DeleteBuffer2()
-  let bid = bufnr("%")
-  let wid = winnr()
-  windo if bid == bufnr("%") | bprev | endif
-  exe "bdel " . bid
-  exe "normal " . wid . "^W^W"
-endfunction
-
-" count the number of buffers
-function BufferCount()
-  " save cur buf number
-  let cbuf = bufnr("%")
-  let bnum = 0
-  bufdo let bnum = bnum + 1
-  " return to the buf
-  exe "b " . cbuf
-  return bnum
-endfunction
-
-function DeleteBuffer()
-  if BufferCount() > 1
-    call DeleteBuffer2()
-  else
-    exe "bdel"
-  endif
-endfunction
-
-map <C-W> :call DeleteBuffer()<CR>
-imap <C-W> <C-O><C-W>
+noremap <C-w> :lclose<CR>:bp<bar>sp<bar>bn<bar>bd<CR>
 
 function! NumberToggle()
   if(&relativenumber == 1)
