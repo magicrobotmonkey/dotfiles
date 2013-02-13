@@ -130,5 +130,10 @@ if [ -f $WRAPPER ]; then
 	source $WRAPPER
 fi
 
+#http://www.ukuug.org/events/linux2003/papers/bash_tips/
+shopt -s cdspell
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
 export EDITOR=vim
 source ~/.bash_prompt
