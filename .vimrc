@@ -25,6 +25,35 @@ set sidescrolloff=3
 set relativenumber
 
 autocmd FileType python setlocal foldmethod=expr
+set foldexpr=PythonFoldExpr(v:lnum)
+set foldtext=PythonFoldText()
+
+let g:currentDepth = 0
+function! PythonFoldExpr(lnum)
+
+	"decrease depth for less indent
+    if indent( nextnonblank(a:lnum) )/4 < g:currentDepth
+		let g:currentDepth = g:currentDepth - 1
+    endif
+    
+	
+	"increase depth for a class or functiion on previous line
+    if getline(a:lnum-1) =~ '^\s*\(class\|def\)\s'
+		let g:currentDepth = g:currentDepth + 1
+    endif
+        
+	return g:currentDepth
+
+endfunction
+
+function! PythonFoldText()
+	let size = 1 + v:foldend - v:foldstart 
+	let size = "    \t".size.'    '
+
+
+	return size.getline(v:foldend)
+
+endfunction
 
 autocmd FileType yaml setlocal expandtab 
 "au BufWrite *.py 1,$s/\s*$//g
