@@ -24,6 +24,8 @@ set scrolloff=3
 set sidescrolloff=3
 set relativenumber
 
+autocmd FileType python setlocal foldmethod=expr
+
 autocmd FileType yaml setlocal expandtab 
 "au BufWrite *.py 1,$s/\s*$//g
 
@@ -37,12 +39,6 @@ colorscheme solarized
 
 "swaps
 set dir=~/.vimswp
-
-"this one selects a function starting including its header if its properly
-"formatted. run it from anywhere in the fxn but the starting /**
-"noremap ,f ?/\*\*<CR>V%/function<CR>/{<CR>%
-" and this folds a function into two folds, header and inner
-"noremap ,d ?/\*\*<CR>zf%/{<CR>zf%
 
 "wtf vim
 noremap Y y$
@@ -152,3 +148,4 @@ let g:Powerline_colorscheme='solarized16'
 
 "python from powerline.ext.vim import source_plugin; source_plugin()
 "source ~/.local/lib/python2.7/site-packages/powerline/ext/vim/source_plugin.vim
+highlight! Folded cterm=NONE ctermfg=magenta
