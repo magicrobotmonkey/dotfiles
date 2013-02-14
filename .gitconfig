@@ -3,3 +3,5 @@
 	email = aaron@five3genomics.com
 [color]
 	ui = true
+[alias]
+	vd = !git diff | vim -R -
