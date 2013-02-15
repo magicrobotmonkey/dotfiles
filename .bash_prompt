@@ -7,7 +7,6 @@ bash_prompt()
 	# colors
 	local BLACK="\[\033[00;30m\]"
 	local GRAY="\[\033[00;m\]"
-	local RED="\[\033[00;31m\]"
 	local GREEN="\[\033[00;32m\]"
 	local YELLOW="\[\033[00;33m\]"
 	local BLUE="\[\033[00;34m\]"
@@ -26,10 +25,15 @@ bash_prompt()
 	local RED="\[\033[38;05;160m\]"
 	local PURPLE="\[\033[38;05;61m\]"
 
+	# http://linuxtidbits.wordpress.com/2008/08/11/output-color-on-bash-scripts/
+	local BOLDRED=$(tput bold)$(tput setaf 1)
+	local NORMAL=$(tput sgr 0)
+
 	local DEFAULT_COLOR=$GRAY
 	local USERNAME_COLOR=$BLACK
 	local VIRTUALENV_COLOR=$MAGENTA
 	local GIT_COLOR=$GREEN
+
 
 	local HOSTNAME_COLOR
 	PLATFORM='unknown'
@@ -57,7 +61,7 @@ bash_prompt()
 	local USERNAME="[$USERNAME_COLOR\u@$END_COLOR$HOSTNAME$USERNAME_COLOR]$END_COLOR"
 	local LOCATION="$BLUE[\w]$END_COLOR"
 	local CURSOR=$'\xe2\x9e\xa4'
-	local CURSOR="$RED$CURSOR$END_COLOR"
+	local CURSOR="$BOLDRED$CURSOR$END_COLOR"
 	local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
 	local VIRT_ENV=""
 	if [ -n "$VIRTUAL_ENV" ] ; then
