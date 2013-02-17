@@ -1,3 +1,4 @@
+
 set nocompatible
 call pathogen#infect()
 set nowrap
@@ -23,6 +24,11 @@ set cursorcolumn
 set scrolloff=3
 set sidescrolloff=3
 set relativenumber
+
+" Save undo/redos
+set undofile
+set undodir=~/.vimbackup
+set directory=~/.vimswp
 
 autocmd FileType python setlocal foldmethod=expr
 set foldexpr=PythonFoldExpr(v:lnum)
