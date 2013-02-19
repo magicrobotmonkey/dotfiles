@@ -78,6 +78,10 @@ set dir=~/.vimswp
 "wtf vim
 noremap Y y$
 
+
+nmap ; :CtrlPBuffer<CR>
+
+
 "move between splits and windows
 noremap <C-h> :bn<CR>
 noremap <C-l> :bp<CR>
