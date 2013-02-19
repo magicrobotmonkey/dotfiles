@@ -61,7 +61,7 @@ bash_prompt()
 	local USERNAME="[$USERNAME_COLOR\u@$END_COLOR$HOSTNAME$USERNAME_COLOR]$END_COLOR"
 	local LOCATION="$BLUE[\w]$END_COLOR"
 	local CURSOR=$'\xe2\x9e\xa4'
-	local CURSOR="$BOLDRED$CURSOR$END_COLOR"
+	local CURSOR="$BOLDRED$CURSOR$NORMAL"
 	local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
 	local VIRT_ENV=""
 	if [ -n "$VIRTUAL_ENV" ] ; then
@@ -80,6 +80,7 @@ bash_prompt()
 	FIRSTLINE=$USERNAME$VIRT_ENV$GIT$LOCATION
 
 	export PS1="$DIVIDER\n$FIRSTLINE\n$CURSOR "
+	export PS2=$CURSOR
 }
 
 bash_prompt
