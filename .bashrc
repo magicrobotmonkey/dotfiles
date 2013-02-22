@@ -145,3 +145,6 @@ PROMPT_COMMAND='history -a'
 
 export EDITOR=vim
 source ~/.bash_prompt
+if [ -f ~/.bash_local ]; then
+	source ~/.bash_local
+fi
