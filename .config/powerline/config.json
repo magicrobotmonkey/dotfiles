@@ -1,0 +1,33 @@
+{
+	"common": {
+		"term_24bit_colors": false,
+		"paths": "config.powerline.segments",
+		"dividers": {
+			"left": {
+				"hard": "",
+				"soft": ""
+			},
+			"right": {
+				"hard": "",
+				"soft": ""
+			}
+		}
+	},
+	"ext": {
+		"shell": {
+			"colorscheme": "default",
+			"theme": "default"
+		},
+		"tmux": {
+			"colorscheme": "custom",
+			"theme": "default"
+		},
+		"vim": {
+			"colorscheme": "solarized",
+			"theme": "default",
+			"local_themes": {
+				"help": "help"
+			}
+		}
+	}
+}
