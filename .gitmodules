@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/vim-solarized-powerline"]
 	path = .vim/bundle/vim-solarized-powerline
 	url = https://github.com/stephenmckinney/vim-solarized-powerline.git
+[submodule "code/powerline"]
+	path = code/powerline
+	url = https://github.com/Lokaltog/powerline.git
