@@ -3,9 +3,7 @@
 	"segments": {
 		"right": [
 			{
-				"name": "network_load",
-				"priority": 50,
-				"divider_highlight_group": "background:divider"
+				"name": "hostname"
 			},
 			{
 				"name": "date",
