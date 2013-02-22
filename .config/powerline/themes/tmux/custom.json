@@ -1,0 +1,17 @@
+{
+	"default_module": "powerline.segments.common",
+	"segments": {
+		"right": [
+			{
+				"name": "network_load",
+				"priority": 50,
+				"divider_highlight_group": "background:divider"
+			},
+			{
+				"name": "date",
+				"args": {"format": "%b %d"},
+				"divider_highlight_group": "time:divider"
+			}
+		]
+	}
+}
