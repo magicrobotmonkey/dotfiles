@@ -5,3 +5,5 @@
 	ui = true
 [alias]
 	vd = !git diff | vim -R -
+[push]
+	default = tracking

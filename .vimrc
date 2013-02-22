@@ -79,7 +79,10 @@ set dir=~/.vimswp
 noremap Y y$
 
 
-nmap ; :CtrlPBuffer<CR>
+nmap <C-b> :CtrlPBuffer<CR>
+nmap <C-e> :CtrlP<CR>
+nmap <C-m> :CtrlPMRUFiles<CR>
+nmap <C-a> :CtrlPMixed<CR>
 
 
 "move between splits and windows
@@ -182,9 +185,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 set encoding=utf-8
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
-" let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized16'
+source ~/code/powerline/powerline/bindings/vim/plugin/source_plugin.vim
 
-"python from powerline.ext.vim import source_plugin; source_plugin()
-"source ~/.local/lib/python2.7/site-packages/powerline/ext/vim/source_plugin.vim
 highlight! Folded cterm=NONE ctermfg=magenta

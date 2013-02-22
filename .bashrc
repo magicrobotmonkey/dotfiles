@@ -116,11 +116,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH=/usr/local/sbin:"${PATH}"
-# set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ] ; then
-	export PATH=~/bin:"${PATH}"
-fi
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+pathadd ~/code/powerline/scripts
+pathadd /usr/local/sbin
+pathadd ~/bin
+
+export PYTHONPATH=$PYTHONPATH:${HOME}/code/powerline:${HOME}/.config/powerline/custom_segments
 
 alias ssh='ssh -A'
 alias fixssh='source ~/bin/fixssh'
