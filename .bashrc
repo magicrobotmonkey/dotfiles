@@ -90,6 +90,8 @@ alias ssh='ssh -A'
 
 alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
+alias irssi_tunnel="ssh -L 6667:localhost:3369 d53"
+
 
 alias dotup='cd ~/dotfiles && git pull && source ~/.bashrc && cd -'
 alias soba='source ~/.bashrc'

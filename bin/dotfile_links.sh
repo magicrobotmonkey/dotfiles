@@ -12,7 +12,9 @@ do
 
 	if [ ! -e ~/$file ]
 	then
-		ln -s -t ~/ ~/dotfiles/$file
+		cd ~/
+		ln -s ~/dotfiles/$file
+		cd -
 	fi
 
 	
