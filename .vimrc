@@ -81,7 +81,7 @@ noremap Y y$
 
 nmap <C-b> :CtrlPBuffer<CR>
 nmap <C-e> :CtrlP<CR>
-nmap <C-m> :CtrlPMRUFiles<CR>
+nmap <C-l> :CtrlPMRUFiles<CR>
 nmap <C-a> :CtrlPMixed<CR>
 
 
