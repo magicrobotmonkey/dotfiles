@@ -79,6 +79,7 @@ set dir=~/.vimswp
 noremap Y y$
 
 
+let g:ctrlp_show_hidden = 1
 nmap <C-b> :CtrlPBuffer<CR>
 nmap <C-e> :CtrlP<CR>
 nmap <C-l> :CtrlPMRUFiles<CR>
