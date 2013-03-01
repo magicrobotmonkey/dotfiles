@@ -202,6 +202,10 @@ settings = {
     theme = "solarized-universal";
     hilight_color = "= %R";
   };
+  proxy = {
+    irssiproxy_password = "SuperSecretIrssiPass";
+    irssiproxy_ports = "Five3Genomics=3369";
+  };
 };
 hilights = (
   { text = "abassett"; color = "%M"; nick = "yes"; word = "yes"; }

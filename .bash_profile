@@ -5,4 +5,4 @@ if [ -f /usr/local/bin/brew ]; then
 	fi
 fi
 
-source .bashrc
+source ~/.bashrc
