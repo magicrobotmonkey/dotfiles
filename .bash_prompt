@@ -2,6 +2,14 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
+__virtualenv_ps1()
+{
+	local VIRT_ENV=""
+	if [ -n "$VIRTUAL_ENV" ] ; then
+		VIRT_ENV="[`basename \"$VIRTUAL_ENV\"`]"
+	fi
+	echo $VIRT_ENV
+}
 bash_prompt()
 {
 	# colors
@@ -63,10 +71,7 @@ bash_prompt()
 	local CURSOR=$'\xe2\x9e\xa4'
 	local CURSOR="\[$BOLDRED\]$CURSOR\[$NORMAL\]"
 	local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
-	local VIRT_ENV=""
-	if [ -n "$VIRTUAL_ENV" ] ; then
-		VIRT_ENV="$VIRTUALENV_COLOR[`basename \"$VIRTUAL_ENV\"`]$END_COLOR"
-	fi
+	local VIRT_ENV="$VIRTUALENV_COLOR\$(__virtualenv_ps1)$END_COLOR"
 
 	DIVIDER=""
 	X=1
