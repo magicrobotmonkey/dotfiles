@@ -92,6 +92,8 @@ alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
 alias irssi_tunnel="ssh -L 6667:localhost:3369 d53"
 
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
 
 alias dotup='cd ~/dotfiles && git pull && source ~/.bashrc && cd -'
 alias soba='source ~/.bashrc'
@@ -144,6 +146,7 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 export EDITOR=vim
+set -o vi
 source ~/.bash_prompt
 if [ -f ~/.bash_local ]; then
 	source ~/.bash_local
