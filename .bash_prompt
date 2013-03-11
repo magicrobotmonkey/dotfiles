@@ -49,7 +49,7 @@ bash_prompt()
 		OSX=1
 		HOSTNAME_COLOR=$CYAN
 	else
-		HOSTNAME=`hostname -A`
+		HOSTNAME=`hostname -f`
 		if [[ `hostname` == hotcops ]]; then
 			HOSTNAME_COLOR=$WHITE
 		elif [[ $HOSTNAME == *vpnlocal* ]]; then
