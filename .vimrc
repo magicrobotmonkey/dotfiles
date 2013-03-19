@@ -6,6 +6,7 @@ set showmatch
 set autoindent
 filetype indent on
 set wildmode=longest,list
+set wildignore+=*.pyc
 set textwidth=150
 set ignorecase
 set smartcase
@@ -84,6 +85,7 @@ nmap <C-b> :CtrlPBuffer<CR>
 nmap <C-e> :CtrlP<CR>
 nmap <C-l> :CtrlPMRUFiles<CR>
 nmap <C-a> :CtrlPMixed<CR>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
 
 
 "move between splits and windows
