@@ -58,6 +58,7 @@ function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
 alias dotup='cd ~/dotfiles && git pull && git submodule update --init && source ~/.bashrc && cd -'
 alias soba='source ~/.bashrc'
+alias pyserv='python -m SimpleHTTPServer 8008'
 
 alias cdgr='cd `git rev-parse --show-toplevel`'
 
