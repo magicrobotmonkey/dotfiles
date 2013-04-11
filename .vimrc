@@ -73,6 +73,19 @@ let g:solarized_termcolors=16
 colorscheme solarized
 "hi Search cterm=NONE ctermfg=grey ctermbg=red
 
+" hide highlights to start
+highlight  CursorLine ctermbg=8
+highlight  CursorColumn ctermbg=8
+
+" Change Color when entering Insert Mode
+autocmd InsertEnter * highlight  CursorLine ctermbg=0
+autocmd InsertEnter * highlight  CursorColumn ctermbg=0
+
+" Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight  CursorLine ctermbg=8
+autocmd InsertLeave * highlight  CursorColumn ctermbg=8
+
+
 "swaps
 set dir=~/.vimswp
 
@@ -191,3 +204,6 @@ let g:Powerline_symbols = 'fancy'
 source ~/code/powerline/powerline/bindings/vim/plugin/source_plugin.vim
 
 highlight! Folded cterm=NONE ctermfg=magenta
+" Enable CursorLine
+set cursorline
+
