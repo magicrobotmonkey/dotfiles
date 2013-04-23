@@ -87,7 +87,6 @@ pathadd() {
         PATH="${PATH:+"$PATH:"}$1"
     fi
 }
-pathadd ~/code/powerline/scripts
 pathadd /usr/local/sbin
 pathadd ~/bin
 
