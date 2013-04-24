@@ -18,6 +18,10 @@
 				"divider_highlight_group": "branch:divider"
 			},
 			{
+				"name": "file_vcs_status",
+				"draw_divider": false
+			},
+			{
 				"name": "readonly_indicator",
 				"draw_divider": false,
 				"after": " "
@@ -32,13 +36,8 @@
 				"draw_divider": false
 			},
 			{
-				"name": "file_vcs_status",
-				"draw_divider": false
-			},
-			{
 				"name": "modified_indicator",
-				"args": { "text": "★" },
-				"before": " "
+				"args": { "text": " ★" }
 			},
 			{
 				"type": "filler",
@@ -47,30 +46,10 @@
 		],
 		"right": [
 			{
-				"name": "file_format",
-				"draw_divider": false,
-				"exclude_modes": ["nc"],
-				"priority": 50,
-				"divider_highlight_group": "background:divider"
-			},
-			{
-				"name": "file_encoding",
-				"exclude_modes": ["nc"],
-				"priority": 50,
-				"divider_highlight_group": "background:divider"
-			},
-			{
 				"name": "file_type",
 				"exclude_modes": ["nc"],
 				"priority": 50,
 				"divider_highlight_group": "background:divider"
-			},
-			{
-				"name": "line_percent",
-				"args": { "gradient": true },
-				"priority": 30,
-				"after": "%",
-				"rjust": 4
 			},
 			{
 				"type": "string",
