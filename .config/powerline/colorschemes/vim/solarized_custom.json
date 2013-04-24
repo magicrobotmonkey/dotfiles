@@ -51,8 +51,9 @@
 				"base00": "base02",
 				"base0": "base01",
 				"base1": "base00",
-				"base2": "base0",
-				"base3": "base1"
+				"base2": "base1",
+				"base3": "base2",
+				"cyan": "base01"
 			}
 		},
 		"i": {
