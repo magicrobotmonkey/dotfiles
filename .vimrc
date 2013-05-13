@@ -110,8 +110,11 @@ noremap <C-k> <C-W>W
 set backspace=indent,eol,start
 
 "comment and uncomment a line
-map ,c ^i#<ESC>
+"map ,c ^i#<ESC>
 map ,u ^x
+
+"highligh matching curlies
+map ,c Vf{%
 
 noremap <Space> <PageDown>
 noremap <BS> <PageUp>
