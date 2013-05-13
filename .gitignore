@@ -1,4 +1,5 @@
 bin/fixssh
 .vim/.netrwhist
 .irssi/away.log
+.irssi/config
 .config/ipython/profile_default/history.sqlite
