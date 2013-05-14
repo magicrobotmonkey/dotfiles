@@ -51,7 +51,7 @@ alias ssh='ssh -A'
 
 alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
-alias irssi_tunnel="ssh -L 6667:localhost:3369 d53"
+alias irssi_tunnel="ssh -L 6667:localhost:3369 -L6668:localhost:3370 d53"
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
