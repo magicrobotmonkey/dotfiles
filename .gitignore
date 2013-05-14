@@ -2,4 +2,8 @@ bin/fixssh
 .vim/.netrwhist
 .irssi/away.log
 .irssi/config
+.config/*
+!.config/ipython
+!.config/powerline
 .config/ipython/profile_default/history.sqlite
+
