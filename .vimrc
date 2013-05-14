@@ -188,8 +188,8 @@ let g:flake8_max_line_length=150
 let g:flake8_ignore="W191,E121,E122,E123,E127,E128,E223"
 
 " syntastic (file checking)
-let g:syntastic_python_checker_args='--ignore=W191,E121,E122,E123,E127,E128,E223 --max-line-length=150'
-let g:syntastic_python_checker="flake8"
+let g:syntastic_python_flake8_args='--ignore=W191,E121,E122,E123,E127,E128,E223 --max-line-length=150'
+let g:syntastic_python_checker=["flake8"]
 "let g:syntastic_python_checker="pyflakes"
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
