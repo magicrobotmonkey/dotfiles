@@ -14,6 +14,8 @@ set incsearch
 set gdefault
 set ssop=buffers,winsize
 set iskeyword+=-,@ " none of these are word dividers
+autocmd FileType coffee setlocal tabstop=2
+autocmd FileType coffee setlocal shiftwidth=2
 set tabstop=4
 set shiftwidth=4
 set noexpandtab

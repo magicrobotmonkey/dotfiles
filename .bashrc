@@ -120,3 +120,5 @@ source ~/.bash_prompt
 if [ -f ~/.bash_local ]; then
 	source ~/.bash_local
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
