@@ -94,11 +94,12 @@ noremap Y y$
 
 
 let g:ctrlp_show_hidden = 1
-nmap <C-b> :CtrlPBuffer<CR>
+" nmap <C-b> :CtrlPBuffer<CR>
 nmap <C-e> :CtrlP<CR>
-nmap <C-l> :CtrlPMRUFiles<CR>
+nmap <C-b> :CtrlPMRUFiles<CR>
 nmap <C-a> :CtrlPMixed<CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
+let g:ctrlp_working_path_mode = 'ra'
 
 
 "move between splits and windows
