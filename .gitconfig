@@ -10,3 +10,5 @@
 	ignored = !git ls-files -v | grep ^[a-z]
 [push]
 	default = tracking
+[help]
+	autocorrect = 1
