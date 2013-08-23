@@ -91,6 +91,7 @@ set dir=~/.vimswp
 
 "wtf vim
 noremap Y y$
+inoremap jk <esc>
 
 
 let g:ctrlp_show_hidden = 1
