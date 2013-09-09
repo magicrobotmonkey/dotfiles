@@ -31,6 +31,9 @@ set undofile
 set undodir=~/.vimbackup
 set directory=~/.vimswp
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 autocmd FileType python setlocal foldmethod=expr
 set foldexpr=PythonFoldExpr(v:lnum)
 set foldtext=PythonFoldText()
@@ -101,6 +104,7 @@ nmap <C-b> :CtrlPMRUFiles<CR>
 nmap <C-a> :CtrlPMixed<CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_window = 'max:40'
 
 
 "move between splits and windows
