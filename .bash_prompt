@@ -73,7 +73,9 @@ bash_prompt()
 	local CURSOR_BOTTOMCURVE=$'\xe2\x95\xb0'
 	local CURSOR=$'\xe2\x9e\xa4'
 	local CURSOR="\[$BOLDRED\]$CURSOR_BOTTOMCURVE$CURSOR\[$NORMAL\]"
-	local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
+	if type "__git_ps1" > /dev/null; then
+		local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
+	fi
 	local VIRT_ENV="$VIRTUALENV_COLOR\$(__virtualenv_ps1)$END_COLOR"
 
 	DIVIDER=""
