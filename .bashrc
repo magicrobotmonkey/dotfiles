@@ -120,3 +120,5 @@ source ~/.bash_prompt
 if [ -f ~/.bash_local ]; then
 	source ~/.bash_local
 fi
+
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
