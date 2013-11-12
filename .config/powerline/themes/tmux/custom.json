@@ -11,6 +11,9 @@
 				"name": "date",
 				"args": {"format": "%b %d"},
 				"divider_highlight_group": "time:divider"
+			},
+			{
+				"name": "network_load"
 			}
 		]
 	}

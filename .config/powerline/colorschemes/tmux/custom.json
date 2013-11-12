@@ -25,12 +25,6 @@
 		"time": { "fg": "base3", "bg": "orange" },
 		"time:divider": { "fg": "base00", "bg": "base0" },
 		"hostname": { "fg": "base3", "bg": "cyan" },
-		"weather": { "fg": "base02", "bg": "base1" },
-		"weather_temp_cold": { "fg": "blue", "bg": "base1" },
-		"weather_temp_hot": { "fg": "red", "bg": "base1" },
-		"weather_condition_☼": { "fg": "red", "bg": "base1" },
-		"weather_condition_❅": { "fg": "blue", "bg": "base1" },
-		"weather_condition_☔": { "fg": "blue", "bg": "base1" },
-		"network_load": { "fg": "base01", "bg": "base1" }
+		"network_load": { "fg": "base3", "bg": "yellow" }
 	}
 }
