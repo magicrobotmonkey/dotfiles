@@ -26,6 +26,9 @@ set scrolloff=3
 set sidescrolloff=3
 set relativenumber
 
+"highlight bash scripts posix compliant
+let g:is_posix = 1
+
 " Save undo/redos
 set undofile
 set undodir=~/.vimbackup
