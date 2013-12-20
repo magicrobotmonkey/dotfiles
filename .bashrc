@@ -55,6 +55,9 @@ alias irssi_tunnel="ssh -L 6667:localhost:3369 -L6668:localhost:3370 awsdev"
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
+function busterIlo() { sudo ssh -L 443:${1}:443 -L 80:${1}:80 -L 17990:${1}:17990 -L 17988:${1}:17988 root@172.16.5.151; }
+
+
 
 alias dotup='cd ~/dotfiles && git pull && git submodule update --init && source ~/.bashrc && cd -'
 alias soba='source ~/.bashrc'
