@@ -109,6 +109,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_window = 'max:40'
 
+autocmd QuickFixCmdPost *grep* cwindow
+
 
 "move between splits and windows
 noremap <C-h> :bn<CR>
@@ -154,6 +156,8 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+au BufRead,BufNewFile *.yml set ft=ansible
+au BufRead,BufNewFile *.yaml set ft=ansible
 
 " a better htmldjango detection
 augroup filetypedetect
