@@ -96,7 +96,7 @@ pathadd ~/bin
 export PYTHONPATH=$PYTHONPATH:${HOME}/code/powerline:${HOME}/.config/powerline/custom_segments
 
 alias ssh='ssh -A'
-alias fixssh='source ~/bin/fixssh'
+alias fixssh='export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"'
 ~/bin/grabssh
 
 WRAPPER=/usr/local/bin/virtualenvwrapper.sh
@@ -120,9 +120,9 @@ bind -m vi-insert '"\e[B": history-search-forward'
 bind -m vi-insert '"\e."':yank-last-arg
 
 # tmux ssh-agent fix (byobu supposedly handles this, that is when it works with tmux)
-if [[ -f /Library ]]; then 
+if [[ $(uname) = "Linux" ]]; then 
 	if [ "$(id -u)" != "0" ]; then  # make sure its not a sudo
-		ln -sf $(find /tmp/ssh-* -name agent.\* -uid $(id -u) 2>/dev/null | head -n 1) ~/.ssh/ssh_auth_sock
+		ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 		export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
 	fi
 fi
