@@ -119,6 +119,14 @@ bind -m vi-insert '"\e[B": history-search-forward'
 #http://superuser.com/questions/18498/last-parameter-of-last-command-in-bash-in-vi-mode
 bind -m vi-insert '"\e."':yank-last-arg
 
+# tmux ssh-agent fix (byobu supposedly handles this, that is when it works with tmux)
+if [[ -f /Library ]]; then 
+	if [ "$(id -u)" != "0" ]; then  # make sure its not a sudo
+		ln -sf $(find /tmp/ssh-* -name agent.\* -uid $(id -u) 2>/dev/null | head -n 1) ~/.ssh/ssh_auth_sock
+		export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+	fi
+fi
+
 source ~/.bash_prompt
 if [ -f ~/.bash_local ]; then
 	source ~/.bash_local
