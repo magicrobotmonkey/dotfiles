@@ -105,14 +105,6 @@ noremap Y y$
 inoremap jk <esc>
 
 
-let g:ctrlp_show_hidden = 1
-" nmap <C-b> :CtrlPBuffer<CR>
-nmap <C-e> :CtrlP<CR>
-nmap <C-b> :CtrlPMRUFiles<CR>
-nmap <C-a> :CtrlPMixed<CR>
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_match_window = 'max:40'
 
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -217,6 +209,18 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python', 'javascript'],
                            \ 'passive_filetypes': ['less', 'css'] }
 
+
+"unite
+let g:unite_force_overwrite_statusline = 0
+let g:unite_source_history_yank_enable = 1
+let g:unite_enable_start_insert = 1
+let g:unite_prompt = '➤ '
+call unite#filters#matcher_default#use(['matcher_glob'])
+"call unite#filters#sorter_default#use(['sorter_rank'])
+nnoremap <space>y :Unite -no-split history/yank<cr>
+nnoremap <C-e> :Unite -no-split file_rec<cr>
+nnoremap <C-f> :Unite -no-split file<cr>
+nnoremap <C-b> :Unite -no-split buffer<cr>
 
 " powerline
 set encoding=utf-8
