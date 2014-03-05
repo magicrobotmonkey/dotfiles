@@ -14,9 +14,6 @@ set incsearch
 set gdefault
 set ssop=buffers,winsize
 set iskeyword+=-,@ " none of these are word dividers
-set tabstop=4
-set shiftwidth=4
-set noexpandtab
 syn on
 set hlsearch
 set hidden
@@ -25,6 +22,14 @@ set cursorcolumn
 set scrolloff=3
 set sidescrolloff=3
 set relativenumber
+
+"detect indent auto switch between tab and space indentation
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+:let g:detectindent_preferred_indent = 4
+:let g:detectindent_max_lines_to_analyse = 100
+autocmd FileType python DetectIndent
 
 "highlight bash scripts posix compliant
 let g:is_posix = 1
