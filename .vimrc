@@ -78,6 +78,7 @@ autocmd FileType yaml setlocal expandtab
 
 syntax enable
 set t_Co=16
+
 set background=dark
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
@@ -85,16 +86,23 @@ colorscheme solarized
 "hi Search cterm=NONE ctermfg=grey ctermbg=red
 
 " hide highlights to start
-highlight  CursorLine ctermbg=8
-highlight  CursorColumn ctermbg=8
+if(&background == 'dark')
+	highlight  CursorLine ctermbg=0
+	highlight  CursorColumn ctermbg=0
 
-" Change Color when entering Insert Mode
-autocmd InsertEnter * highlight  CursorLine ctermbg=0
-autocmd InsertEnter * highlight  CursorColumn ctermbg=0
+	" Change Color when entering Insert Mode
+	autocmd InsertEnter * highlight  CursorLine ctermbg=0
+	autocmd InsertEnter * highlight  CursorColumn ctermbg=0
 
-" Revert Color to default when leaving Insert Mode
-autocmd InsertLeave * highlight  CursorLine ctermbg=8
-autocmd InsertLeave * highlight  CursorColumn ctermbg=8
+	" Revert Color to default when leaving Insert Mode
+	autocmd InsertLeave * highlight  CursorLine ctermbg=8
+	autocmd InsertLeave * highlight  CursorColumn ctermbg=8
+else
+	" for light mode
+	highlight  CursorLine ctermbg=7
+	highlight  CursorColumn ctermbg=7
+endif
+
 
 
 "swaps
@@ -217,7 +225,7 @@ let g:unite_enable_start_insert = 1
 let g:unite_prompt = '➤ '
 call unite#filters#matcher_default#use(['matcher_glob'])
 "call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <space>y :Unite -no-split history/yank<cr>
+nnoremap <C-y> :Unite -no-split history/yank<cr>
 nnoremap <C-e> :Unite -no-split file_rec<cr>
 nnoremap <C-f> :Unite -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>

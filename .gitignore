@@ -6,4 +6,5 @@ bin/fixssh
 !.config/ipython
 !.config/powerline
 .config/ipython/profile_default/history.sqlite
+.config/ipython/profile_default/db/rootmodules_cache
 
