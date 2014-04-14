@@ -1,33 +1,52 @@
 {
 	"common": {
-		"term_24bit_colors": false,
-		"paths": "config.powerline.segments",
+		"term_truecolor": false,
 		"dividers": {
 			"left": {
-				"hard": "",
-				"soft": ""
+				"hard": " ",
+				"soft": " "
 			},
 			"right": {
-				"hard": "",
-				"soft": ""
+				"hard": " ",
+				"soft": " "
 			}
-		}
+		},
+		"spaces": 1
 	},
 	"ext": {
+		"ipython": {
+			"colorscheme": "default",
+			"theme": "in",
+			"local_themes": {
+				"rewrite": "rewrite",
+				"out": "out",
+				"in2": "in2"
+			}
+		},
 		"shell": {
+			"colorscheme": "solarized",
+			"theme": "default",
+			"local_themes": {
+				"continuation": "continuation",
+				"select": "select"
+			}
+		},
+		"tmux": {
 			"colorscheme": "default",
 			"theme": "default"
 		},
-		"tmux": {
-			"colorscheme": "custom",
-			"theme": "custom"
-		},
 		"vim": {
 			"colorscheme": "solarized_custom",
-			"theme": "custom",
+			"theme": "default",
 			"local_themes": {
-				"help": "help"
+				"cmdwin": "cmdwin",
+				"help": "help",
+				"quickfix": "quickfix"
 			}
+		},
+		"wm": {
+			"colorscheme": "default",
+			"theme": "default"
 		}
 	}
 }

@@ -87,22 +87,18 @@ colorscheme solarized
 "hi Search cterm=NONE ctermfg=grey ctermbg=red
 
 " hide highlights to start
-if(&background == 'dark')
-	highlight  CursorLine ctermbg=0
-	highlight  CursorColumn ctermbg=0
-
-	" Change Color when entering Insert Mode
-	autocmd InsertEnter * highlight  CursorLine ctermbg=0
-	autocmd InsertEnter * highlight  CursorColumn ctermbg=0
-
-	" Revert Color to default when leaving Insert Mode
-	autocmd InsertLeave * highlight  CursorLine ctermbg=8
-	autocmd InsertLeave * highlight  CursorColumn ctermbg=8
-else
-	" for light mode
-	highlight  CursorLine ctermbg=7
-	highlight  CursorColumn ctermbg=7
-endif
+function! ToggleSolarized()
+	if(&background == 'dark')
+		set background=light
+		highlight  CursorLine ctermbg=7
+		highlight  CursorColumn ctermbg=7
+	else
+		" for light mode
+		set background=dark
+		highlight  CursorLine ctermbg=8
+		highlight  CursorColumn ctermbg=8
+	endif
+endfunction
 
 
 
@@ -225,17 +221,18 @@ let g:unite_source_history_yank_enable = 1
 let g:unite_enable_start_insert = 1
 let g:unite_prompt = '➤ '
 call unite#filters#matcher_default#use(['matcher_glob'])
-"call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 nnoremap <C-y> :Unite -no-split history/yank<cr>
 nnoremap <C-e> :Unite -no-split file_rec<cr>
 nnoremap <C-f> :Unite -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
 
-" powerline
+" jpowerline
 set encoding=utf-8
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
-source ~/code/powerline/powerline/bindings/vim/plugin/source_plugin.vim
+set rtp+=~/code/powerline/bindings/vim
+source ~/code/powerline/powerline/bindings/vim/plugin/powerline.vim
 
 highlight! Folded cterm=NONE ctermfg=magenta
 " Enable CursorLine
