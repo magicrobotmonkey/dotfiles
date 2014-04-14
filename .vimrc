@@ -30,6 +30,7 @@ set noexpandtab
 :let g:detectindent_preferred_indent = 4
 :let g:detectindent_max_lines_to_analyse = 100
 autocmd FileType python DetectIndent
+autocmd FileType javascript DetectIndent
 
 "highlight bash scripts posix compliant
 let g:is_posix = 1
