@@ -12,10 +12,6 @@
 				"highlight_group": ["file_name"]
 			},
 			{
-				"name": "window_title",
-				"draw_soft_divider": false
-			},
-			{
 				"type": "string",
 				"highlight_group": ["background"],
 				"draw_soft_divider": false,

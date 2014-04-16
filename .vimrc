@@ -85,6 +85,8 @@ let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
 colorscheme solarized
 "hi Search cterm=NONE ctermfg=grey ctermbg=red
+highlight  CursorLine ctermbg=0
+highlight  CursorColumn ctermbg=0
 
 " hide highlights to start
 function! ToggleSolarized()
@@ -95,8 +97,8 @@ function! ToggleSolarized()
 	else
 		" for light mode
 		set background=dark
-		highlight  CursorLine ctermbg=8
-		highlight  CursorColumn ctermbg=8
+		highlight  CursorLine ctermbg=0
+		highlight  CursorColumn ctermbg=0
 	endif
 endfunction
 
@@ -204,7 +206,7 @@ let g:flake8_ignore="W191,E121,E122,E123,E127,E128,E223"
 
 " syntastic (file checking)
 let g:syntastic_python_flake8_args='--ignore=W191,E121,E122,E123,E127,E128,E223 --max-line-length=150'
-let g:syntastic_python_checker=["flake8"]
+let g:syntastic_python_checkers=["flake8"]
 "let g:syntastic_python_checker="pyflakes"
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
