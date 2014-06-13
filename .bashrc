@@ -122,7 +122,7 @@ bind -m vi-insert '"\e."':yank-last-arg
 # tmux ssh-agent fix (byobu supposedly handles this, that is when it works with tmux)
 if [[ ! -f /Library ]]; then 
 	if [ "$(id -u)" != "0" ]; then  # make sure its not a sudo
-		ln -sf $(find /tmp/ssh-* -name agent.\* -uid $(id -u) 2>/dev/null | head -n 1) ~/.ssh/ssh_auth_sock
+		ln -sf $(find /tmp/ssh-* -name agent.\* -uid $(id -u) 2>/dev/null | xargs ls -t | head -n 1) ~/.ssh/ssh_auth_sock
 		export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
 	fi
 fi
