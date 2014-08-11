@@ -72,7 +72,7 @@ bash_prompt()
 	local CURSOR_TOPCURVE="\[$BOLDRED\]$CURSOR_TOPCURVE\[$NORMAL\]"
 	local CURSOR_BOTTOMCURVE=$'\xe2\x95\xb0'
 	local CURSOR=$'\xe2\x9e\xa4'
-	local CURSOR="\[$BOLDRED\]$CURSOR_BOTTOMCURVE$CURSOR\[$NORMAL\]"
+	local CURSOR="\[$BOLDRED\]$CURSOR_BOTTOMCURVE $CURSOR\[$NORMAL\]"
 	if type "__git_ps1" > /dev/null; then
 		local GIT="$GIT_COLOR\$(__git_ps1 '[%s]')$END_COLOR"
 	fi
@@ -89,7 +89,7 @@ bash_prompt()
 	DIVIDER="$WHITE$DIVIDER$END_COLOR"
 	FIRSTLINE=$USERNAME$VIRT_ENV$GIT$LOCATION
 
-	export PS1="$DIVIDER\n$CURSOR_TOPCURVE$FIRSTLINE\n$CURSOR "
+	export PS1="$DIVIDER\n$CURSOR_TOPCURVE $FIRSTLINE\n$CURSOR "
 	export PS2=$CURSOR
 }
 
