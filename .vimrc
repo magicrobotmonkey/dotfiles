@@ -202,10 +202,10 @@ let g:flake8_max_line_length=150
 " E127: continuation line over-indented for visual indent
 " E128: continuation line under-indented for visual indent
 " E223: tab before operator
-let g:flake8_ignore="W191,E121,E122,E123,E127,E128,E223"
+" let g:flake8_ignore="W191,E121,E122,E123,E127,E128,E223"
 
 " syntastic (file checking)
-let g:syntastic_python_flake8_args='--ignore=W191,E121,E122,E123,E127,E128,E223 --max-line-length=150'
+" let g:syntastic_python_flake8_args='--ignore=W191,E121,E122,E123,E127,E128,E223 --max-line-length=150'
 let g:syntastic_python_checkers=["flake8"]
 "let g:syntastic_python_checker="pyflakes"
 let g:syntastic_auto_loc_list=1
