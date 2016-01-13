@@ -43,7 +43,7 @@ set directory=~/.vimswp
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-autocmd FileType python setlocal foldmethod=expr
+"autocmd FileType python setlocal foldmethod=expr
 set foldexpr=PythonFoldExpr(v:lnum)
 set foldtext=PythonFoldText()
 
@@ -240,3 +240,4 @@ highlight! Folded cterm=NONE ctermfg=magenta
 " Enable CursorLine
 set cursorline
 
+let g:fugitive_gitlab_domains = ['https://perfecto']

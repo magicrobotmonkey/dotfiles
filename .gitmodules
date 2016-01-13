@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/vim-polyglot"]
 	path = .vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule ".vim/bundle/fugitive-gitlab"]
+	path = .vim/bundle/fugitive-gitlab
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
