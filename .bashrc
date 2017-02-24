@@ -51,8 +51,7 @@ alias ssh='ssh -A'
 
 alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
-alias irssi_tunnel="ssh -L 6667:localhost:3369 -L6668:localhost:3370 awsdev"
-
+alias fixvenv='pip install --upgrade -i 'https://pypi.python.org/simple' setuptools ndg-httpsclient pip==8.1.1'
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
 function busterIlo() { sudo ssh -L 443:${1}:443 -L 80:${1}:80 -L 17990:${1}:17990 -L 17988:${1}:17988 root@172.16.5.151; }
@@ -108,7 +107,6 @@ fi
 #http://www.ukuug.org/events/linux2003/papers/bash_tips/
 shopt -s cdspell
 shopt -s histappend
-PROMPT_COMMAND='history -a'
 
 export EDITOR=vim
 #http://www.catonmat.net/blog/bash-vi-editing-mode-cheat-sheet/

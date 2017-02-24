@@ -109,7 +109,6 @@ set dir=~/.vimswp
 
 "wtf vim
 noremap Y y$
-inoremap jk <esc>
 
 
 

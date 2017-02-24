@@ -6,3 +6,5 @@ if [ -f /usr/local/bin/brew ]; then
 fi
 
 source ~/.bashrc
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
