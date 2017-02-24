@@ -51,7 +51,7 @@ alias ssh='ssh -A'
 
 alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
-alias fixvenv='pip install --upgrade -i 'https://pypi.python.org/simple' setuptools ndg-httpsclient pip==8.1.1'
+alias fixvenv='pip install --upgrade -i 'https://pypi.python.org/simple' packaging appdirs ndg-httpsclient pip==8.1.1'
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
 function busterIlo() { sudo ssh -L 443:${1}:443 -L 80:${1}:80 -L 17990:${1}:17990 -L 17988:${1}:17988 root@172.16.5.151; }
