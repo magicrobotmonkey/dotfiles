@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/fugitive-gitlab"]
 	path = .vim/bundle/fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
