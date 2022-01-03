@@ -54,9 +54,6 @@ alias tmat='tmux at -t'
 alias fixvenv='pip install -i "https://pypi.python.org/simple" packaging appdirs cryptography==1.7.2 ndg-httpsclient pip==8.1.1'
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
-function busterIlo() { sudo ssh -L 443:${1}:443 -L 80:${1}:80 -L 17990:${1}:17990 -L 17988:${1}:17988 root@172.16.5.151; }
-
-
 
 alias dotup='cd ~/dotfiles && git pull && git submodule update --init && source ~/.bashrc && cd -'
 alias soba='source ~/.bashrc'
@@ -83,6 +80,8 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+source ~/.bash_git
 
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -133,3 +132,4 @@ if [ -f ~/.bash_local ]; then
 fi
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+eval "$(/opt/homebrew/bin/brew shellenv)"
