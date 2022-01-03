@@ -1,6 +1,6 @@
 [user]
 	name = Aaron Bassett
-	email = aaron.bassett@nantomics.com
+	email = abassett@gmail.com
 [color]
 	ui = true
 [alias]
@@ -12,3 +12,8 @@
 	default = tracking
 [help]
 	autocorrect = 1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
