@@ -26,11 +26,7 @@ set relativenumber
 "detect indent auto switch between tab and space indentation
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
-:let g:detectindent_preferred_indent = 4
-:let g:detectindent_max_lines_to_analyse = 100
-autocmd FileType python DetectIndent
-autocmd FileType javascript DetectIndent
+set expandtab
 
 "highlight bash scripts posix compliant
 let g:is_posix = 1
@@ -74,7 +70,6 @@ function! PythonFoldText()
 
 endfunction
 
-autocmd FileType yaml setlocal expandtab 
 "au BufWrite *.py 1,$s/\s*$//g
 
 syntax enable

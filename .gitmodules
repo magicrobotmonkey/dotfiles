@@ -34,9 +34,6 @@
 [submodule ".vim/bundle/vim-ansible-yaml"]
 	path = .vim/bundle/vim-ansible-yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
-[submodule ".vim/bundle/detectindent"]
-	path = .vim/bundle/detectindent
-	url = https://github.com/ciaranm/detectindent.git
 [submodule ".vim/bundle/unite.vim"]
 	path = .vim/bundle/unite.vim
 	url = https://github.com/Shougo/unite.vim.git
