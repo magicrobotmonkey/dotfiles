@@ -97,6 +97,9 @@ function! ToggleSolarized()
 	endif
 endfunction
 
+":AirlineTheme solarized
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
 
 
 "swaps
@@ -223,12 +226,8 @@ nnoremap <C-e> :Unite -no-split file_rec<cr>
 nnoremap <C-f> :Unite -no-split file<cr>
 nnoremap <C-b> :Unite -no-split buffer<cr>
 
-" jpowerline
 set encoding=utf-8
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
-set rtp+=~/code/powerline/bindings/vim
-source ~/code/powerline/powerline/bindings/vim/plugin/powerline.vim
 
 highlight! Folded cterm=NONE ctermfg=magenta
 " Enable CursorLine
