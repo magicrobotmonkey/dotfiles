@@ -98,8 +98,16 @@ function! ToggleSolarized()
 endfunction
 
 ":AirlineTheme solarized
-let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr="║"
+let g:airline_symbols.dirty="💩"
+
+" this doesnt work, even though i really want it to
+"let g:airline_symbols.modified='🛑'
+
 
 
 "swaps
@@ -157,8 +165,6 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-au BufRead,BufNewFile *.yml set ft=ansible
-au BufRead,BufNewFile *.yaml set ft=ansible
 
 " a better htmldjango detection
 augroup filetypedetect
