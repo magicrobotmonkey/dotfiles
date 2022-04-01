@@ -8,3 +8,4 @@ bin/fixssh
 .config/ipython/profile_default/history.sqlite
 .config/ipython/profile_default/db/rootmodules_cache
 
+.vim/black/

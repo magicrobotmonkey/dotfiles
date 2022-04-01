@@ -197,7 +197,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " flake8
 " NOTE: using syntastic, need to use syntastic_python_checker_args
-let g:flake8_max_line_length=150
+let g:flake8_max_line_length=79
 " W191: indentation contains tabs
 " E121: continuation line indentation is not a multiple of four
 " E122: continuation line missing indentation or outdented
@@ -208,7 +208,7 @@ let g:flake8_max_line_length=150
 " let g:flake8_ignore="W191,E121,E122,E123,E127,E128,E223"
 
 " syntastic (file checking)
-let g:syntastic_python_flake8_args=' --max-line-length=150'
+let g:syntastic_python_flake8_args=' --max-line-length=79'
 let g:syntastic_python_checkers=["flake8"]
 "let g:syntastic_python_checker="pyflakes"
 let g:syntastic_auto_loc_list=1
@@ -218,6 +218,9 @@ let g:syntastic_loc_list_height=8
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python', 'javascript'],
                            \ 'passive_filetypes': ['less', 'css'] }
+
+autocmd BufWritePre *.py execute ':Black'
+let g:black_linelength=79
 
 
 "unite
