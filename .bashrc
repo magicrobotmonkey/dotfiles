@@ -24,12 +24,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -51,57 +45,24 @@ alias ssh='ssh -A'
 
 alias tmls='tmux list-sessions'
 alias tmat='tmux at -t'
-alias fixvenv='pip install -i "https://pypi.python.org/simple" packaging appdirs cryptography==1.7.2 ndg-httpsclient pip==8.1.1'
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
 
 alias dotup='cd ~/dotfiles && git pull && git submodule update --init && source ~/.bashrc && cd -'
 alias soba='source ~/.bashrc'
-alias pyserv='python -m SimpleHTTPServer 8008'
 
 alias cdgr='cd `git rev-parse --show-toplevel`'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
 
 source ~/.bash_git
 
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
+        PATH="$1:${PATH:+"$PATH"}"
     fi
 }
-pathadd /usr/local/sbin
 pathadd ~/bin
-pathadd /usr/local/share/python
-
-export PYTHONPATH=$PYTHONPATH:${HOME}/code/powerline:${HOME}/.config/powerline/custom_segments
 
 alias ssh='ssh -A'
-alias fixssh='export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"'
-#~/bin/grabssh
-
-WRAPPER=/usr/local/bin/virtualenvwrapper.sh
-if [ -f $WRAPPER ]; then
-	source $WRAPPER
-fi
 
 #http://www.ukuug.org/events/linux2003/papers/bash_tips/
 shopt -s cdspell
@@ -131,5 +92,3 @@ if [ -f ~/.bash_local ]; then
 	source ~/.bash_local
 fi
 
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-eval "$(/opt/homebrew/bin/brew shellenv)"
